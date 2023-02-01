@@ -1,0 +1,34 @@
+@use "../utils/mixins" as m;
+
+.contact {
+    @include m.flexbox();
+    gap: 50px;
+    white-space: nowrap;
+
+    &__item {
+        @include m.flexbox($align: center);
+        gap: 10px;
+    }
+    // need fix (nav__link)
+    &__link {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.143;
+        letter-spacing: 0.02em;
+    }
+    &__link {
+        @include m.flexbox($align: center);
+        gap: 10px;
+
+        color: var(--font-color-contact-header);
+
+        // icon active
+        &:is(:hover, :focus) .contact__svg {
+            fill: var(--svg-fill-contact-hover);
+        }
+    }
+    &__svg {
+        fill: var(--svg-fill-contact);
+        transition: var(--transition-fill);
+    }
+}

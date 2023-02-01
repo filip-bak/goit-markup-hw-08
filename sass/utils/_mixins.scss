@@ -1,0 +1,23 @@
+@use "../utils/variables" as *;
+@use "sass:map";
+
+@mixin flexbox($direction: null, $justify: null, $align: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin mq($key, $width: min) {
+    $size: map.get($breakpoints, $key);
+    @media (#{$width}-width: $size) {
+        @content;
+    }
+}

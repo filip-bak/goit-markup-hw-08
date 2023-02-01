@@ -1,0 +1,31 @@
+@use "../utils/mixins" as m;
+
+.skill {
+    &__list {
+        @include m.flexbox($justify: center, $align: center);
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    &__item {
+        width: 270px;
+    }
+    &__background {
+        @include m.flexbox($justify: center);
+
+        margin-bottom: 30px;
+        padding-block: 25px;
+
+        background-color: var(--bgcolor-skill-svg);
+        border-radius: 4px;
+    }
+    &__svg {
+        fill: var(--svg-fill-skill);
+        color: var(--svg-fill-skill-detail);
+    }
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__description {
+        color: var(--font-color-p);
+    }
+}

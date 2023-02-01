@@ -1,0 +1,30 @@
+// TITLES
+.title {
+    &--primary {
+        font-size: 2.75rem;
+        font-weight: 900;
+        line-height: 1.364;
+        letter-spacing: 0.06em;
+    }
+    &--secondary {
+        font-size: 2.25rem;
+        font-weight: 700;
+        line-height: 1.167;
+        letter-spacing: 0.03em;
+    }
+    // title in section
+    &--section {
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.143;
+        letter-spacing: 0.03em;
+    }
+}
+// Paragraphs
+.skill__description,
+.address__link,
+.form__text {
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+}

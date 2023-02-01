@@ -1,0 +1,37 @@
+@use "../utils/mixins" as m;
+
+.nav {
+    @include m.flexbox();
+
+    margin-inline-start: 94px;
+    flex: 1;
+
+    &__list {
+        @include m.flexbox();
+        gap: 46px;
+    }
+    // need fix (contact__link)
+    &__link {
+        color: var(--font-color-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.143;
+        letter-spacing: 0.02em;
+    }
+}
+.page-active {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -31.3px;
+        left: 0;
+
+        width: 100%;
+        height: 4px;
+
+        background-color: var(--bgcolor-page-active);
+        border-radius: 2px;
+    }
+}

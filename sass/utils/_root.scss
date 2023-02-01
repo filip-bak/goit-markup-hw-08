@@ -1,0 +1,151 @@
+:root {
+    /* || FONTS */
+    --ff: Roboto, sans-serif;
+    --ff-logo: Raleway, sans-serif;
+    --fs: 16px;
+
+    /* || COLORS */
+    --font-color-primary: #212121;
+    --font-color-secondary: #fff;
+    --font-color-p: #757575;
+
+    --font-color-contact-header: #757575;
+    --font-color-contact-footer: #ffffff99;
+    --font-color-street-footer: #fff;
+    --font-color-title-footer: #fff;
+
+    --font-color-hover: #2196f3;
+
+    --font-color-social-footer: #fff;
+    --font-color-social-hover: #fff;
+
+    --font-color-about-us-title: #fff;
+
+    --font-color-card-description: #fff;
+
+    /* | LOGO COLORS*/
+    --font-color-logo-primary: #2196f3;
+
+    --font-color-logo-part-dark: #000;
+    --font-color-logo-part-light: #fff;
+
+    /* FORM COLORS */
+    --font-color-form-contact: #757575;
+    --font-color-form-link: #2196f3;
+
+    --font-color-form-terms: #757575;
+
+    --font-color-newsletter-footer: #fff;
+    /* PLACEHOLDER COLORS */
+    --font-color-form-placeholder: #75757580;
+
+    --font-color-placeholder-footer: #ffffff99;
+
+    /* | SVG COLORS */
+    --svg-fill-contact: #757575;
+    --svg-fill-contact-hover: #2196f3;
+
+    --svg-fill-skill: #212121;
+    --svg-fill-skill-detail: #2196f3;
+
+    --svg-fill-social: #afb1b8;
+    --svg-fill-social-footer: #fff;
+
+    --svg-fill-social-hover: #fff;
+
+    --svg-fill-client: #afb1b8;
+    --svg-fill-client-hover: #2196f3;
+
+    --svg-fill-form-contact: #212121;
+    --svg-fill-form-contact-hover: #2196f3;
+    --svg-fill-form-checkmark: #fff;
+
+    --svg-fill-button-close: #000;
+    --svg-fill-button-send: #fff;
+
+    /* | BUTTON COLORS */
+    --font-color-button-primary: #fff;
+
+    --font-color-button-secondary: #212121;
+    --font-color-button-secondary-hover: #fff;
+
+    /* || BACKGROUND */
+    --bgcolor: #fff;
+    --bgcolor-dark: #2f303a;
+    --bgcolor-fade: #f5f4fa;
+
+    --bgcolor-skill-svg: #f5f4fa;
+
+    --bgcolor-team: #fff;
+
+    --bgcolor-social-hover: #2196f3;
+    --bgcolor-social-footer: #ffffff1a;
+    --bgcolor-social-footer-hover: #2196f3;
+
+    --bgcolor-about-us-title: #2f303acc;
+
+    --bgcolor-card-background: #2196f3e5;
+
+    --bgcolor-page-active: #2196f3;
+
+    --bgcolor-modal: #fff;
+
+    --bgcolor-form-checkbox: #2196f3;
+
+    --bgcolor-newsletter-footer: transparent;
+
+    /* | BUTTONS BACKGROUND */
+    --bgcolor-button-primary: #2196f3;
+    --bgcolor-button-primary-hover: #1076c9;
+
+    --bgcolor-button-secondary: #f5f4fa;
+    --bgcolor-button-secondary-hover: #2196f3;
+
+    --bgcolor-button-close: #fff;
+
+    /* || BORDERS */
+    --border-header: 1px solid #ececec;
+
+    --border-card-item: 1px solid #eeeeee;
+
+    --border-client-item: 1px solid #afb1b8;
+    --border-color-client-item-hover: #2196f3;
+
+    --border-form-input: 1px solid #21212133;
+    --border-color-form-input-focus: #2196f3;
+
+    --border-button-close: 1px solid #0000001a;
+
+    --border-form-checkmark: 2px solid #212121;
+
+    --border-newsletter-input-footer: 1px solid #ffffff4d;
+    --border-color-newsletter-input-footer: #2196f3;
+
+    /* || SHADOWS */
+    --shadow-team: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --shadow-newsletter-footer: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    /* | SHADOW BUTTONS */
+    --shadow-button-primary: 0px 4px 4px 0px #00000026;
+    --shadow-button-menu-hover: 0px 2px 2px 0px #0000001f, 0px 1px 2px 0px #00000014, 0px 3px 1px 0px #0000001a;
+    --shadow-card-item-hover: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f, 0px 1px 1px 0px #0000001f;
+    --shadow-modal: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    /* || TRANSITIONS */
+    --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bgcolor: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-shadow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-border-color: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-button-primary: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-button-secondary: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-button-text-secondary: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* | modal */
+    --transition-modal-open: transform 600ms 400ms cubic-bezier(0, 0, 0.2, 1);
+    --transition-modal-close: transform 500ms 100ms cubic-bezier(0.4, 0, 1, 1), scale 300ms cubic-bezier(0, 0, 0.2, 1);
+    --transition-backdrop: visibility 600ms cubic-bezier(0.4, 0, 0.2, 1), opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}

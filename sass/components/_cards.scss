@@ -1,0 +1,69 @@
+@use "../utils/mixins" as m;
+
+.card {
+    &__list {
+        @include m.flexbox($justify: center, $align: center);
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    &__item {
+        transition: var(--transition-shadow);
+
+        &:hover {
+            box-shadow: var(--shadow-card-item-hover);
+
+            & .card__overlay {
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+    }
+    &__info {
+        padding: 20px 0 20px 24px;
+
+        border-left: var(--border-card-item);
+        border-right: var(--border-card-item);
+        border-bottom: var(--border-card-item);
+    }
+    &__title {
+        margin-bottom: 4px;
+
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 2;
+        letter-spacing: 0.06em;
+    }
+    &__type {
+        color: var(--font-color-p);
+        font-size: 1rem;
+        line-height: 1.875;
+        letter-spacing: 0.03em;
+    }
+    &__container {
+        position: relative;
+        overflow: hidden;
+    }
+    &__img {
+        width: 370px;
+        height: 294px;
+    }
+    &__overlay {
+        @include m.position(absolute, $top: 0, $bottom: 0);
+
+        padding: 49px 45px 49px 24px;
+
+        background-color: var(--bgcolor-card-background);
+
+        transform: translateY(101%);
+        pointer-events: none;
+
+        transition: var(--transition-transform);
+    }
+    &__description {
+        color: var(--font-color-card-description);
+
+        font-size: 1.125rem;
+        line-height: 1.556;
+        letter-spacing: 0.03em;
+    }
+}

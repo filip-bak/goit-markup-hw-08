@@ -1,0 +1,39 @@
+@use "../utils/mixins" as m;
+
+.backdrop {
+    @include m.position(fixed, $top: 0);
+
+    @include m.flexbox($justify: center, $align: center);
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: var(--transition-backdrop);
+}
+.is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+}
+.modal {
+    @include m.position(relative);
+
+    padding: 40px;
+    width: 528px;
+
+    background-color: var(--bgcolor-modal);
+    box-shadow: var(--shadow-modal);
+    border-radius: 4px;
+
+    transform: translateY(0);
+
+    transition: var(--transition-modal-open);
+}
+.is-hidden .modal {
+    scale: 0.7;
+    transform: translateY(-110vh);
+
+    transition: var(--transition-modal-close);
+}

@@ -1,0 +1,35 @@
+@use "../utils/mixins" as m;
+
+.about-us {
+    &__title {
+        margin-bottom: 50px;
+    }
+    &__list {
+        @include m.flexbox($justify: center, $align: center);
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    &__item {
+        @include m.position(relative);
+        width: 370px;
+    }
+    &__background {
+        @include m.position(absolute, $bottom: 0);
+
+        width: 100%;
+        padding-block: 27px;
+
+        background-color: var(--bgcolor-about-us-title);
+    }
+    &__subtitle {
+        color: var(--font-color-about-us-title);
+        text-transform: uppercase;
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+
+        // width: 370px;
+        // height: 294px;
+    }
+}

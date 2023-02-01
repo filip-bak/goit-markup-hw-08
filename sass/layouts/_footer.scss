@@ -1,0 +1,35 @@
+@use "../utils/mixins" as m;
+
+.footer {
+    background-color: var(--bgcolor-dark);
+
+    &__grid {
+        @include m.flexbox($justify: center, $align: baseline);
+        flex-wrap: wrap;
+    }
+    &__item {
+        @include m.flexbox(column);
+
+        &:nth-child(1) {
+            margin-right: 70px;
+        }
+        &:nth-child(2) {
+            margin-right: 78px;
+        }
+    }
+    // Need some changes
+    // @include m.mq(small, max) {
+    //     &__grid {
+    //         align-items: center;
+    //         justify-content: center;
+    //         text-align: center;
+    //     }
+    // }
+
+    &__title {
+        margin-bottom: 20px;
+
+        color: var(--font-color-title-footer);
+        text-transform: uppercase;
+    }
+}

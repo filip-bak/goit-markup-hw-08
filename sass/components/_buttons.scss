@@ -1,0 +1,82 @@
+@use "../utils/mixins" as m;
+
+.button {
+    width: 200px;
+
+    padding-block: 10px;
+
+    border: none;
+    border-radius: 4px;
+    background-color: var(--bgcolor-button-primary);
+
+    box-shadow: var(--shadow-button-primary);
+
+    transition: var(--transition-button-primary);
+
+    cursor: pointer;
+
+    &__text {
+        color: var(--font-color-button-primary);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.875;
+        letter-spacing: 0.06em;
+
+        &--secondary {
+            color: var(--font-color-button-secondary);
+            font-weight: 500;
+            line-height: 1.625;
+            letter-spacing: 0.03em;
+            transition: var(--transition-button-text-secondary);
+        }
+    }
+    &--grid {
+        @include m.flexbox($justify: center, $align: center);
+        gap: 24px;
+    }
+    &__svg {
+        fill: var(--svg-fill-button-send);
+    }
+    // button active
+    &:is(:hover, :focus-visible) {
+        background-color: var(--bgcolor-button-primary-hover);
+    }
+    &--secondary {
+        width: auto;
+        padding: 6px 22.5px;
+
+        background-color: var(--bgcolor-button-secondary);
+
+        box-shadow: none;
+        transition: var(--transition-button-secondary);
+    }
+
+    // button--secondary active
+    &--secondary:is(:hover, :focus) {
+        background-color: var(--bgcolor-button-secondary-hover);
+
+        box-shadow: var(--shadow-button-menu-hover);
+
+        & .button__text--secondary {
+            color: var(--font-color-button-secondary-hover);
+        }
+    }
+}
+
+.button-close {
+    @include m.position(absolute, $top: 8px, $right: 8px);
+
+    display: flex;
+
+    padding: 10px;
+
+    background-color: var(--bgcolor-button-close);
+    border: var(--border-button-close);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &__svg {
+        fill: var(--svg-fill-button-close);
+    }
+}

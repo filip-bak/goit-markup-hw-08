@@ -1,0 +1,20 @@
+@use "../utils/mixins" as m;
+
+.logo {
+    font-family: var(--ff-logo);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.192;
+    letter-spacing: 0.03em;
+
+    &__part {
+        color: var(--font-color-logo-primary);
+
+        &--light {
+            color: var(--font-color-logo-part-light);
+        }
+        &--dark {
+            color: var(--font-color-logo-part-dark);
+        }
+    }
+}

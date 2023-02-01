@@ -1,0 +1,37 @@
+@use "../utils/mixins" as m;
+
+.client {
+    &__title {
+        margin-bottom: 50px;
+    }
+    &__list {
+        @include m.flexbox($justify: center, $align: center);
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    &__link {
+        @include m.flexbox($justify: center, $align: center);
+
+        width: 170px;
+        height: 92px;
+
+        border: var(--border-client-item);
+        border-radius: 4px;
+
+        transition: var(--transition-border-color);
+
+        // client active
+        &:is(:hover, :focus) {
+            border-color: var(--border-color-client-item-hover);
+
+            // icon active
+            & .client__svg {
+                fill: var(--svg-fill-client-hover);
+            }
+        }
+    }
+    &__svg {
+        fill: var(--svg-fill-client);
+        transition: var(--transition-fill);
+    }
+}

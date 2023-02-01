@@ -1,0 +1,9 @@
+@use "../utils/mixins" as m;
+
+.header {
+    border-bottom: var(--border-header);
+}
+.header__grid {
+    @include m.flexbox($justify: space-between, $align: center);
+    flex-wrap: wrap;
+}

@@ -1,0 +1,177 @@
+@use "../utils/mixins" as m;
+
+.form {
+    &__title {
+        margin-bottom: 12px;
+
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: 0.03em;
+    }
+    &__item {
+        @include m.flexbox(column, $justify: center);
+        width: 100%;
+    }
+    &__item:has(.form__comment) {
+        margin-bottom: 20px;
+    }
+    &__item:has(.form__checkbox) {
+        margin-bottom: 30px;
+    }
+    &__item:has(.button) {
+        align-items: center;
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    &__contact {
+        @include m.position(relative);
+
+        margin-bottom: 4px;
+
+        color: var(--font-color-form-contact);
+        font-size: 12px;
+        line-height: 0.875;
+        letter-spacing: 0.01em;
+    }
+    &__container {
+        @include m.position(relative);
+    }
+    &__input {
+        width: 100%;
+        min-height: 40px;
+        padding-left: 42px;
+
+        border: var(--border-form-input);
+        border-radius: 4px;
+
+        transition: var(--transition-border-color);
+    }
+    &__svg {
+        @include m.position(absolute, $top: 11.5px, $left: 16px);
+
+        fill: var(--svg-fill-form-contact);
+        transition: var(--transition-fill);
+    }
+    &__comment {
+        padding: 12px 16px;
+        min-height: 120px;
+
+        border: var(--border-form-input);
+        border-radius: 4px;
+        resize: none;
+
+        transition: var(--transition-border-color);
+
+        &::placeholder {
+            color: var(--font-color-form-placeholder);
+            font-size: 12px;
+            line-height: 1.167;
+            letter-spacing: 0.01em;
+        }
+    }
+    &__terms {
+        @include m.flexbox($justify: center, $align: center);
+
+        pointer-events: none;
+    }
+    &__text {
+        margin-left: 8px;
+
+        color: var(--font-color-form-terms);
+    }
+    &__link {
+        color: var(--font-color-form-link);
+        text-decoration: underline;
+
+        pointer-events: auto;
+    }
+
+    // input active
+    &__input:focus,
+    &__comment:focus {
+        border-color: var(--border-color-form-input-focus);
+        outline: 0;
+    }
+    // input active -> svg fill
+    &__input:focus + .form__svg {
+        fill: var(--svg-fill-form-contact-hover);
+    }
+}
+
+// -----------------   CHECKBOX   -----------------
+// off
+.checkbox {
+    @include m.position(relative, $top: -1px);
+
+    width: 16px;
+    min-height: 15px;
+
+    border: var(--border-form-checkmark);
+    border-radius: 2px;
+
+    pointer-events: auto;
+    cursor: pointer;
+}
+.form__checkbox + .form__terms {
+    & .checkbox__svg {
+        display: none;
+    }
+}
+// on
+.form__checkbox:checked + .form__terms {
+    & .checkbox {
+        background-color: var(--bgcolor-form-checkbox);
+
+        border: none;
+    }
+    & .checkbox__svg {
+        @include m.position(absolute, $top: 1px, $left: 2px);
+
+        display: block;
+
+        fill: var(--svg-fill-form-checkmark);
+    }
+}
+.form__checkbox {
+    &--reset {
+        appearance: none;
+    }
+}
+// -----------------   NEWSLETTER   -----------------
+.newsletter {
+    @include m.flexbox();
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 12px;
+
+    &__input {
+        min-width: 358px;
+        min-height: 50px;
+        padding-inline-start: 16px;
+
+        color: var(--font-color-newsletter-footer);
+        background-color: var(--bgcolor-newsletter-footer);
+        border: var(--border-newsletter-input-footer);
+        border-radius: 4px;
+
+        box-shadow: var(--shadow-newsletter-footer);
+
+        transition: var(--transition-border-color);
+
+        &::placeholder {
+            color: var(--font-color-placeholder-footer);
+        }
+        &:focus {
+            border-color: var(--border-color-newsletter-input-footer);
+            outline: 0;
+        }
+        // need changes
+        // @include m.mq(small, max) {
+        //     & {
+        //         min-width: 290px;
+        //     }
+        // }
+    }
+}

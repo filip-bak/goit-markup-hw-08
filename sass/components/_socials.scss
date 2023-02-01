@@ -1,0 +1,42 @@
+@use "../utils/mixins" as m;
+.social {
+    @include m.flexbox($justify: center, $align: center);
+    gap: 10px;
+
+    // logo == link
+    &__logo {
+        @include m.flexbox($justify: center, $align: center);
+
+        width: 44px;
+        height: 44px;
+
+        border-radius: 50%;
+
+        transition: var(--transition-bgcolor);
+    }
+    &__logo--is-background {
+        background-color: var(--bgcolor-social-footer);
+
+        &:is(:hover, :focus) {
+            background-color: var(--bgcolor-social-footer-hover);
+        }
+    }
+    &__svg {
+        fill: var(--svg-fill-social);
+        transition: var(--transition-fill);
+    }
+    &__svg--light {
+        fill: var(--svg-fill-social-footer);
+    }
+
+    &__logo:is(:hover, :focus) {
+        // social active ( - footer)
+        &:not(.social__logo--is-background) {
+            background-color: var(--bgcolor-social-hover);
+        }
+        // social icon active ( - footer)
+        .social__svg:not(.social__svg--light) {
+            fill: var(--svg-fill-social-hover);
+        }
+    }
+}

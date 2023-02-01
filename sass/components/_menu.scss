@@ -1,0 +1,13 @@
+@use "../utils/mixins" as m;
+
+.menu {
+    @include m.flexbox($justify: center, $align: center);
+
+    margin-bottom: 50px;
+
+    &__list {
+        @include m.flexbox();
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
