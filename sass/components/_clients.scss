@@ -12,7 +12,7 @@
     &__link {
         @include m.flexbox($justify: center, $align: center);
 
-        width: 170px;
+        width: 210px;
         height: 92px;
 
         border: var(--border-client-item);
@@ -27,6 +27,16 @@
             // icon active
             & .client__svg {
                 fill: var(--svg-fill-client-hover);
+            }
+        }
+        @include m.mq(medium, and, large) {
+            & {
+                width: 226px;
+            }
+        }
+        @include m.mq(large) {
+            & {
+                width: 170px;
             }
         }
     }
