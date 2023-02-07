@@ -1,0 +1,42 @@
+@use "../utils/mixins" as m;
+
+.contact-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-block-end: 34px;
+    &__link {
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        &--telephone {
+            color: var(--font-color-nav-mobile-contact);
+            font-size: 20px;
+            line-height: 40px;
+            white-space: nowrap;
+            @include m.mq(tiny, and, small) {
+                font-size: 26px;
+            }
+            @include m.mq(small) {
+                font-size: 34px;
+            }
+        }
+        &--email {
+            color: var(--font-color-contact-header);
+            font-size: 24px;
+            font-size: 17px;
+            line-height: 28px;
+            @include m.mq(tiny, and, small) {
+                font-size: 17px;
+            }
+            @include m.mq(small) {
+                font-size: 24px;
+            }
+        }
+    }
+    @include m.mq(tiny) {
+        margin-block-end: 64px;
+    }
+    @include m.mq(small) {
+        gap: 32px;
+    }
+}
