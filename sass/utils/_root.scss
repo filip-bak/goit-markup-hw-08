@@ -23,6 +23,10 @@
 
     --font-color-card-description: #fff;
 
+    --font-color-nav-mobile-contact: #2196f3;
+    --font-color-nav-mobile-socials: #2196f3;
+
+    --font-color-page-active: #2196f3;
     /* | LOGO COLORS*/
     --font-color-logo-primary: #2196f3;
 
@@ -60,7 +64,10 @@
     --svg-fill-form-contact-hover: #2196f3;
     --svg-fill-form-checkmark: #fff;
 
+    --svg-fill-button-open: #000;
+    --svg-fill-button-open-active: #2196f3;
     --svg-fill-button-close: #000;
+    --svg-fill-button-close-active: #2196f3;
     --svg-fill-button-send: #fff;
 
     /* | BUTTON COLORS */
@@ -89,6 +96,7 @@
     --bgcolor-page-active: #2196f3;
 
     --bgcolor-modal: #fff;
+    --bgcolor-nav-mobile: #fff;
 
     --bgcolor-form-checkbox: #2196f3;
 
@@ -102,6 +110,7 @@
     --bgcolor-button-secondary-hover: #2196f3;
 
     --bgcolor-button-close: #fff;
+    --bgcolor-button-open-nav: #fff;
 
     /* || BORDERS */
     --border-header: 1px solid #ececec;
@@ -121,10 +130,15 @@
     --border-newsletter-input-footer: 1px solid #ffffff4d;
     --border-color-newsletter-input-footer: #2196f3;
 
+    --border-nav-mobile-socials: 1px solid #21212133;
+
     /* || SHADOWS */
     --shadow-team: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --shadow-newsletter-footer: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    --shadow-nav-mobile: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+        0px 1px 3px rgba(0, 0, 0, 0.16);
 
     /* | SHADOW BUTTONS */
     --shadow-button-primary: 0px 4px 4px 0px #00000026;
@@ -135,15 +149,18 @@
     /* || TRANSITIONS */
     --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bgcolor: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-font-size: font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-shadow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-border-color: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-width: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-padding-inline: padding-inline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-padding-block: padding-block 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-button-primary: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-button-secondary: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-button-secondary: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms;
     --transition-button-text-secondary: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    --transition-button-open-nav: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     /* | modal */
     --transition-modal-open: transform 600ms 400ms cubic-bezier(0, 0, 0.2, 1);
     --transition-modal-close: transform 500ms 100ms cubic-bezier(0.4, 0, 1, 1), scale 300ms cubic-bezier(0, 0, 0.2, 1);
