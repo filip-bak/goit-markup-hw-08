@@ -6,7 +6,7 @@
 
     color: var(--font-color-secondary);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url(../../images/index/banner/main-banner-mobile.jpg);
+        url(./../../images/index/banner/main-banner-mobile.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -14,28 +14,28 @@
     // mobile
     @include m.screen-double-density() {
         background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-            url(../../images/index/banner/main-banner-mobile@2x.jpg);
+            url(./../../images/index/banner/main-banner-mobile@2x.jpg);
     }
 
     // tablet
     @include m.mq(medium, and, large) {
         background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-            url(../../images/index/banner/main-banner-tablet.jpg);
+            url(./../../images/index/banner/main-banner-tablet.jpg);
 
         @include m.screen-double-density() {
             background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-                url(../../images/index/banner/main-banner-tablet@2x.jpg);
+                url(./../../images/index/banner/main-banner-tablet@2x.jpg);
         }
     }
 
     // desktop
     @include m.mq(large) {
         background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-            url(../../images/index/banner/main-banner-desktop.jpg);
+            url(./../../images/index/banner/main-banner-desktop.jpg);
 
         @include m.screen-double-density() {
             background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-                url(../../images/index/banner/main-banner-desktop@2x.jpg);
+                url(./../../images/index/banner/main-banner-desktop@2x.jpg);
         }
     }
 
