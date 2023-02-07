@@ -7,10 +7,15 @@
 
     width: 100vw;
     height: 100vh;
+    padding-inline: 15px;
 
     background-color: rgba(0, 0, 0, 0.2);
 
     transition: var(--transition-backdrop);
+
+    @include m.mq(medium) {
+        padding-inline: 0;
+    }
 }
 .is-hidden {
     pointer-events: none;
@@ -21,7 +26,7 @@
     @include m.position(relative);
 
     padding: 40px;
-    width: 528px;
+    width: 450px;
 
     background-color: var(--bgcolor-modal);
     box-shadow: var(--shadow-modal);
@@ -29,7 +34,11 @@
 
     transform: translateY(0);
 
-    transition: var(--transition-modal-open);
+    transition: var(--transition-modal-open), var(--transition-width);
+
+    @include m.mq(large) {
+        width: 528px;
+    }
 }
 .is-hidden .modal {
     scale: 0.7;
