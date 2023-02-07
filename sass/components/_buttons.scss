@@ -1,8 +1,7 @@
 @use "../utils/mixins" as m;
 
 .button {
-    width: 200px;
-
+    min-width: 200px;
     padding-block: 10px;
 
     border: none;
@@ -33,6 +32,7 @@
     &--grid {
         @include m.flexbox($justify: center, $align: center);
         gap: 24px;
+        white-space: nowrap;
     }
     &__svg {
         fill: var(--svg-fill-button-send);
@@ -42,7 +42,7 @@
         background-color: var(--bgcolor-button-primary-hover);
     }
     &--secondary {
-        width: auto;
+        min-width: auto;
         padding: 6px 22.5px;
 
         background-color: var(--bgcolor-button-secondary);
@@ -63,6 +63,27 @@
     }
 }
 
+.button-open-nav {
+    display: flex;
+    padding: 0;
+
+    border: none;
+    background-color: var(--bgcolor-button-open-nav);
+
+    transition: var(--transition-button-open-nav);
+    cursor: pointer;
+
+    &__svg {
+        fill: var(--svg-fill-button-open);
+    }
+    &:is(:hover, :focus-visible) &__svg {
+        fill: var(--svg-fill-button-open-active);
+    }
+    @include m.mq(medium) {
+        display: none;
+    }
+}
+
 .button-close {
     @include m.position(absolute, $top: 8px, $right: 8px);
 
@@ -78,5 +99,18 @@
 
     &__svg {
         fill: var(--svg-fill-button-close);
+    }
+    &:is(:hover, :focus-visible) &__svg {
+        fill: var(--svg-fill-button-close-active);
+    }
+
+    &--rect {
+        top: 10px;
+        right: 15px;
+
+        padding: 11px;
+
+        border: none;
+        border-radius: 0;
     }
 }
