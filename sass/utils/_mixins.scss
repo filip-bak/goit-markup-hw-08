@@ -1,6 +1,9 @@
 @use "../utils/variables" as *;
 @use "sass:map";
 
+@mixin breakpoint($key) {
+    breakpoint: map.get($breakpoints, $key);
+}
 @mixin flexbox($direction: null, $justify: null, $align: null) {
     display: flex;
     flex-direction: $direction;
@@ -8,16 +11,30 @@
     align-items: $align;
 }
 
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
     position: $position;
     top: $top;
     right: $right;
     bottom: $bottom;
     left: $left;
+    z-index: $z-index;
 }
-@mixin mq($key, $width: min) {
+@mixin mq($key, $add: null, $key2: null) {
     $size: map.get($breakpoints, $key);
-    @media (#{$width}-width: $size) {
+    $size2: map.get($breakpoints, $key2);
+
+    @if ($add == null) {
+        @media (min-width: $size) {
+            @content;
+        }
+    } @else if ($add == and) {
+        @media (min-width: $size) and (max-width: calc($size2 - 1px)) {
+            @content;
+        }
+    }
+}
+@mixin screen-double-density() {
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
         @content;
     }
 }
