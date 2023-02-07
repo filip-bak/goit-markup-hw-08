@@ -13,18 +13,20 @@
         @include m.flexbox(column, $justify: center);
         width: 100%;
     }
+    &__item:not(:last-child) {
+        margin-bottom: 10px;
+    }
     &__item:has(.form__comment) {
         margin-bottom: 20px;
     }
     &__item:has(.form__checkbox) {
+        @include m.flexbox(row, $align: center);
         margin-bottom: 30px;
     }
     &__item:has(.button) {
         align-items: center;
     }
-    &__item:not(:last-child) {
-        margin-bottom: 10px;
-    }
+
     &__contact {
         @include m.position(relative);
 
@@ -56,7 +58,7 @@
     }
     &__comment {
         padding: 12px 16px;
-        min-height: 120px;
+        height: 120px;
 
         border: var(--border-form-input);
         border-radius: 4px;
@@ -71,20 +73,30 @@
             letter-spacing: 0.01em;
         }
     }
-    &__terms {
-        @include m.flexbox($justify: center, $align: center);
-
-        pointer-events: none;
-    }
     &__text {
-        margin-left: 8px;
+        margin-inline-start: 8px;
 
         color: var(--font-color-form-terms);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.167;
+        letter-spacing: 0.03em;
+
+        user-select: text;
+
+        transition: var(--transition-font-size);
+
+        @include m.mq(large) {
+            // [same values] - .skill__description, .address__link
+            font-size: 14px;
+            line-height: 1.714;
+            letter-spacing: 0.03em;
+        }
     }
     &__link {
         color: var(--font-color-form-link);
         text-decoration: underline;
-
+        white-space: nowrap;
         pointer-events: auto;
     }
 
@@ -105,7 +117,7 @@
 .checkbox {
     @include m.position(relative, $top: -1px);
 
-    width: 16px;
+    min-width: 16px;
     min-height: 15px;
 
     border: var(--border-form-checkmark);
@@ -134,20 +146,21 @@
         fill: var(--svg-fill-form-checkmark);
     }
 }
+
 .form__checkbox {
     &--reset {
         appearance: none;
     }
 }
+
 // -----------------   NEWSLETTER   -----------------
 .newsletter {
-    @include m.flexbox();
-    flex-wrap: wrap;
-    width: 100%;
+    @include m.flexbox(column, $align: center);
+
     gap: 12px;
 
     &__input {
-        min-width: 358px;
+        width: 200px;
         min-height: 50px;
         padding-inline-start: 16px;
 
@@ -167,11 +180,26 @@
             border-color: var(--border-color-newsletter-input-footer);
             outline: 0;
         }
-        // need changes
-        // @include m.mq(small, max) {
-        //     & {
-        //         min-width: 290px;
-        //     }
-        // }
+
+        @include m.mq(tiny, and, small) {
+            & {
+                min-width: 290px;
+            }
+        }
+        @include m.mq(small, and, large) {
+            & {
+                min-width: 450px;
+            }
+        }
+        @include m.mq(large) {
+            & {
+                min-width: 358px;
+            }
+        }
+    }
+    @include m.mq(large) {
+        & {
+            flex-direction: row;
+        }
     }
 }
