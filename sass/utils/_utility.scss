@@ -1,21 +1,58 @@
+@use "../utils/mixins" as m;
+
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 800px;
+    padding-inline: 15px;
+
+    transition: var(--transition-padding-inline);
+
+    @include m.mq(large) {
+        max-width: 1200px;
+        padding-inline: 5px;
+    }
 }
 .section {
-    padding: 94px 0;
+    // padding: 94px 0;
+    padding: 60px 0;
 
-    &--top {
-        padding-bottom: 0;
+    transition: var(--transition-padding-block);
+
+    @include m.mq(large) {
+        & {
+            padding: 94px 0;
+        }
+    }
+    &--bottom {
+        @media (min-width: 768px) and (max-width: calc(1200px - 1px)) {
+            & {
+                padding-bottom: 45px;
+            }
+        }
+        @media (min-width: 1200px) {
+            & {
+                padding-bottom: 0px;
+            }
+        }
     }
     &--small {
-        padding: 24px 0;
+        padding: 10px 0;
+
+        @include m.mq(medium) {
+            & {
+                padding: 24px 0;
+            }
+        }
     }
     &--medium {
         padding: 60px 0;
     }
     &--large {
-        padding: 21.345vh 0;
+        padding-block: 118px;
+
+        @include m.mq(large) {
+            padding-block: 200px;
+        }
     }
 }
 .text-center {
@@ -30,8 +67,3 @@
 .img--block {
     display: block;
 }
-// .link--no-decoration,
-// .logo--no-decoration {
-//     color: inherit;
-//     text-decoration: none;
-// }
