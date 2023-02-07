@@ -1,0 +1,66 @@
+@use "../utils/mixins" as m;
+
+.socials {
+    @include m.flexbox($align: center);
+    flex-wrap: wrap;
+    row-gap: 10px;
+
+    width: 130px;
+    margin: 2px;
+
+    &__item {
+        @include m.mq(tiny, and, small) {
+            // borders   ↓  I + F
+            &:nth-child(2n + 1) {
+                border-inline-end: var(--border-nav-mobile-socials);
+            }
+            // paddings ↓ T + L
+            &:nth-child(2n) {
+                padding-inline-start: 10px;
+            }
+            &:nth-child(1) {
+                padding-inline-end: 10px;
+            }
+            &:nth-child(3) {
+                padding-inline-end: 14px;
+            }
+        }
+        @include m.mq(small) {
+            // borders
+            &:not(:last-child) {
+                border-inline-end: var(--border-nav-mobile-socials);
+            }
+            // paddings
+            & {
+                padding-inline: 10px;
+            }
+            &:first-child {
+                padding-inline-start: 0;
+            }
+            &:last-child {
+                padding-inline-end: 0;
+            }
+        }
+    }
+
+    &__link {
+        color: var(--font-color-nav-mobile-socials);
+
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0.02em;
+    }
+
+    @include m.mq(tiny, and, small) {
+        & {
+            width: 200px;
+            row-gap: 10px;
+        }
+    }
+    @include m.mq(small) {
+        & {
+            width: auto;
+        }
+    }
+}
