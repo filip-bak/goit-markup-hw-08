@@ -1,10 +1,16 @@
+@use "../utils/mixins" as m;
+
 // TITLES
 .title {
     &--primary {
-        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-size: clamp(1.7rem, 3.5vw, 2.75rem);
         font-weight: 900;
-        line-height: 1.364;
+        line-height: 1.556;
+
         letter-spacing: 0.06em;
+        @include m.mq(large) {
+            line-height: 1.364;
+        }
     }
     &--secondary {
         font-size: 2.25rem;
@@ -22,8 +28,7 @@
 }
 // Paragraphs
 .skill__description,
-.address__link,
-.form__text {
+.address__link {
     font-size: 14px;
     line-height: 1.714;
     letter-spacing: 0.03em;
