@@ -1,6 +1,8 @@
 @use "../utils/mixins" as m;
 
 .about-us {
+    display: none;
+
     &__title {
         margin-bottom: 50px;
     }
@@ -27,9 +29,8 @@
     }
     &__img {
         width: 100%;
-        height: auto;
-
-        // width: 370px;
-        // height: 294px;
+    }
+    @include m.mq(large) {
+        display: block;
     }
 }
