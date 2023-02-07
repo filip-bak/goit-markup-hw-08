@@ -2,33 +2,42 @@
 
 .contact {
     @include m.flexbox();
-    gap: 50px;
+    flex-direction: column;
+    gap: 6px;
     white-space: nowrap;
 
     &__item {
         @include m.flexbox($align: center);
         gap: 10px;
     }
-    // need fix (nav__link)
-    &__link {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.143;
-        letter-spacing: 0.02em;
-    }
+
     &__link {
         @include m.flexbox($align: center);
         gap: 10px;
 
         color: var(--font-color-contact-header);
 
+        // need fix (nav__link)
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.143;
+        letter-spacing: 0.02em;
+
         // icon active
         &:is(:hover, :focus) .contact__svg {
             fill: var(--svg-fill-contact-hover);
+        }
+        @include m.mq(large) {
+            font-size: 14px;
         }
     }
     &__svg {
         fill: var(--svg-fill-contact);
         transition: var(--transition-fill);
+    }
+
+    @include m.mq(large) {
+        flex-direction: row;
+        gap: 50px;
     }
 }
