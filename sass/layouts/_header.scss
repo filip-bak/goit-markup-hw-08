@@ -7,3 +7,12 @@
     @include m.flexbox($justify: space-between, $align: center);
     flex-wrap: wrap;
 }
+.header__item {
+    display: none;
+
+    @include m.mq(medium) {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+}
