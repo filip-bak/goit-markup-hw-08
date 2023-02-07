@@ -1,0 +1,37 @@
+@use "../utils/mixins" as m;
+
+.nav-mobile-container {
+    @include m.position(fixed, $top: 0, $left: 0, $z-index: 100);
+    @include m.flexbox(column, $justify: space-between);
+
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 40px;
+
+    background-color: var(--bgcolor-nav-mobile);
+    box-shadow: var(--shadow-nav-mobile);
+
+    transform: translateX(100%);
+
+    transition: transform 250ms ease-in-out;
+}
+.nav-mobile {
+    &__item {
+        &:nth-child(1) {
+            margin-block-end: 36px;
+        }
+        &:nth-child(2) {
+            margin-block-end: 32px;
+        }
+    }
+    &__link {
+        color: var(--font-color-primary);
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 47px;
+        letter-spacing: 0.02em;
+    }
+}
+.is-open {
+    transform: translateX(0);
+}
