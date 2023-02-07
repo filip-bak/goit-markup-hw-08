@@ -7,7 +7,14 @@
         gap: 30px;
     }
     &__item {
-        width: 270px;
+        max-width: 450px;
+
+        @include m.mq(medium, and, large) {
+            max-width: 354px;
+        }
+        @include m.mq(large) {
+            max-width: 270px;
+        }
     }
     &__background {
         @include m.flexbox($justify: center);
@@ -23,7 +30,14 @@
         color: var(--svg-fill-skill-detail);
     }
     &__title {
+        text-align: center;
         margin-bottom: 10px;
+
+        @include m.mq(medium) {
+            & {
+                text-align: left;
+            }
+        }
     }
     &__description {
         color: var(--font-color-p);
