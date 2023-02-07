@@ -1,5 +1,4 @@
 @forward "../components/buttons";
-@forward "../components/modal";
 
 // --------   STUDIO   ---------
 @forward "../components/logo";
@@ -15,3 +14,9 @@
 // -------   Portfolio   ---------
 @forward "../components/menu";
 @forward "../components/cards";
+
+// -------   Modals   ---------
+@forward "../components/modal";
+@forward "../components/nav-mobile";
+@forward "../components/contact-mobile";
+@forward "../components/socials-mobile";
